@@ -28,10 +28,12 @@ const serverBankDate = async () => {
 const bankDBCurrent = async () => {
   const db = await fs.readFile(bancDB);
   const data = JSON.parse(db);
+  console.log("🚀 ~ data", data);
 
   const date = Date.now();
 
   const isCurrent = date - data.version <= 60 * 1000;
+  console.log("🚀 ~ isCurrent", isCurrent);
 
   return {
     data,
@@ -43,6 +45,8 @@ const exchangeRate = async () => {
   const isValid = await bankDBCurrent();
 
   if (isValid.isCurrent) return isValid.data;
+
+  console.log("next");
 
   return await serverBankDate();
 };
