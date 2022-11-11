@@ -1,8 +1,8 @@
 import TelegramBot from "node-telegram-bot-api";
 import * as dotenv from "dotenv";
-import { optionsWether, optionsMain, currency } from "./options/index.mjs";
-import { currencyDate, city, hourlyWeather } from "./modules/index.mjs";
-import { currencyDeflated } from "./api/bankApi.mjs";
+import { optionsWether, optionsMain, currency } from "./src/options/index.mjs";
+import { currencyDate, city, hourlyWeather } from "./src/modules/index.mjs";
+import { currencyDeflated } from "./src/api/bankApi.mjs";
 
 dotenv.config();
 
